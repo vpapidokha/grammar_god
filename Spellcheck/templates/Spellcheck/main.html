@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static 'style.css' %} type="text/css">
+</head>
+
+<header>
+    <a id="d1" href="~/main.html">Spellcheck</a>
+</header>
+
+<body>
+<div class="grad"></div>
+<div class="classLogin">
+    <form action="" method="post">{% csrf_token %}
+         {{ form.as_p }}
+        <div>
+            <button id="Button" type="submit">Send</button>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

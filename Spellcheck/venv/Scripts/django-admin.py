@@ -1,4 +1,4 @@
-#!E:\Университет\3 курс\2 семестр\Python\Project\Spellcheck\venv\Scripts\python.exe
+#!E:\Университет\3 курс\2 семестр\Python\Project\grammar_god\Spellcheck\venv\Scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":
