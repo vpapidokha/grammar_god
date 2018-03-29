@@ -2,6 +2,10 @@
     color: aquamarine;
 }
 
+.label {
+display: none;
+}
+
 #d1 {
 		color: white;
 		font-size: 40px;
@@ -28,14 +32,16 @@ header {
 	height: 50px;
 	background-color: #4CAF50;
 }
-
+.block {
+    padding: 2px 0px 0px 45%;
+}
 .classLogin {
-            margin: 20px auto;
+            margin: auto;
 			padding: 4px;
             position: relative;
             width: 410px;
             border: 3px solid white;
-            top: 0px;
+            top:65px;
             left: 0px;
 }
 
@@ -43,7 +49,7 @@ input[type=email], input[type=text], input[type=password],input[type=password] {
             width: 100%;
             font-size: 30px;
             padding: 8px;
-            margin: 0px 0px 2px 0px;
+            margin: 0 0px 10px 0px;
             display: inline-block;
             border: 1px solid #ccc;
             box-sizing: border-box;
@@ -68,12 +74,53 @@ A:link {
 			font-size: 25px;
 }
 
-[for="id_email"],[for="id_name"],[for="id_password"],[for="id_retypePassword"]
+[for="id_email"],[for="id_name"],[for="id_password"],[for="id_retypePassword"],[for="username"],[for="password"]
     { display: none;}
 
 ul {
     color: red;
     font-size: 25px;
-    align-text: center;
+    text-align: center;
 }
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tablinks {
+    margin:5px 0px 0px 0px;
+    background-color: darkslategrey;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color:#cccccc;
+}
+
+/* Change background color of buttons on hover */
+.tablinks:hover {
+    opacity: 0.8;
+}
+
+/* Create an active/current tablink class */
+.tablinks.active {
+    background-color: #e74c3d;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
 
