@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <title>Spellcheck</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--CSS файл -->
     {% load static %}
     <link rel="stylesheet" href={% static 'style.css' %} type="text/css">
 
@@ -15,42 +21,56 @@
 </header>
 
 <body>
-<div class="block">
-
-
-    <button class="tablinks" onclick="openTab(event, 'LogIn')" id="defaultOpen">Log in</button>
-    <button class="tablinks" onclick="openTab(event, 'SignUp')">Sign up</button>
-</div>
-
-    <div class="classLogin">
-        <div id="LogIn" class="tabcontent">
-                        <form method="post">
-                <label for="username">Login</label>
-                <input type="text" name="username" placeholder="Login" required>
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Password" required>
-                <button id="Button" type="submit">Log In</button>
-                <a href="">Forgot Password?</a>
-            </form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="mainColumn">
+                <form method="post">
+                <textarea class="areaForCheck" name="areaForCheck" placeholder="Please, input text for check" rows="10"
+                          cols="60" maxlength="500" required autofocus></textarea>
+                    <button class="myButton" type="submit">Check it!</button>
+                </form>
+            </div>
         </div>
 
-
-        <div id="SignUp" class="tabcontent">
-
-
-            <form action="" method="post">{% csrf_token %}
-                {{ form.as_p }}
-                <div>
-                    <button id="Button" type="submit">Sign Up</button>
+        <div class="col-sm-4">
+            <div class="classLogin">
+                <div class="blockTabs">
+                    <!--Кнопка вкладки Log In -->
+                    <button class="tablinks" onclick="openTab(event, 'LogIn')" id="defaultOpen">Log in</button>
+                    <!--Кнопка вкладки Sign Up -->
+                    <button class="tablinks" onclick="openTab(event, 'SignUp')">Sign up</button>
                 </div>
-            </form>
 
+
+                <!--Вкладка Log In -->
+                <div id="LogIn" class="tabcontent">
+                    <form method="post">
+                        <label for="username">Login</label>
+                        <input type="text" name="username" placeholder="Login" required>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button class="myButton" type="submit">Log In</button>
+                        <a href="">Forgot Password?</a>
+                    </form>
+                </div>
+                <!--Вкладка Sign Up -->
+                <div id="SignUp" class="tabcontent">
+                    <form action="" method="post">{% csrf_token %}
+                        {{ form.as_p }}
+                        <div>
+                            <button class="myButton" type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </div>
+    <div class="row"></div>
+</div>
 
-
-
-
+<!--Скрипт, который показывает содержимое вкладок -->
 <script>
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
@@ -69,7 +89,6 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 </script>
-
 
 </body>
 </html>
