@@ -20,8 +20,14 @@ from . import views
 
 admin.autodiscover()
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^main/', views.main, name='Main page')
+    url(r'^', views.main, name='Main page'),
+    url(r'^main/', views.main, name='Main page'),
+    url(r'^index/', views.main, name='Main page'),
+    url(r'^index.html/', views.main, name='Main page'),
+    url(r'^main.html/', views.main, name='Main page')
 
 ]
