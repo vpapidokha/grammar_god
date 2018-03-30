@@ -10,3 +10,12 @@ class UserAdmin (admin.ModelAdmin):
         model=User
 
 admin.site.register(User, UserAdmin)
+
+class TextAdmin (admin.ModelAdmin):
+    list_display=["language", "text"]
+    search_fields=["language", "text"]
+
+    class Meta:
+        model=Text
+
+admin.site.register(Text, TextAdmin)

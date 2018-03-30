@@ -39,7 +39,7 @@ input[type=email], input[type=text], input[type=password],input[type=password] {
 
 textarea {
     resize: none;
-
+    width: 100%;
     font-size: 30px;
     padding: 8px;
     border: 1px solid #ccc;

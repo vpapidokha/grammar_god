@@ -9,6 +9,6 @@ def main(request):
 
     if request.method=="POST" and form.is_valid():
 
-            new_form=form.save()
+        new_form=form.save()
 
     return render(request, 'Spellcheck/main.html', locals())

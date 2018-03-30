@@ -26,8 +26,17 @@
         <div class="col-sm-8">
             <div class="mainColumn">
                 <form method="post">
-                <textarea class="areaForCheck" name="areaForCheck" placeholder="Please, input text for check" rows="10"
-                          cols="60" maxlength="500" required autofocus></textarea>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="1">English</option>
+                            <option value="2">Ukrainian</option>
+                        </select>
+                    </div>
+                    <textarea class="areaForCheck" name="areaForCheck" placeholder="Please, input text for check" rows="10"
+                              maxlength="500" required autofocus></textarea>
                     <button class="myButton" type="submit">Check it!</button>
                 </form>
             </div>
