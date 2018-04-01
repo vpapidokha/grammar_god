@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .forms import UsersForm
+from .models import Text
 
 def main(request):
     name = 'Kavinnnn'
-
+    texts=Text.objects.filter()
     #UsersForm.fields['email'].widget.attrs['placeholder'] = 'name'
     form = UsersForm(request.POST or None)
 
