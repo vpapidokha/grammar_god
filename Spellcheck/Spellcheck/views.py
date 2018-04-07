@@ -13,3 +13,6 @@ def main(request):
         new_form=form.save()
 
     return render(request, 'Spellcheck/main.html', locals())
+
+def notFound(request):
+    return render(request, 'Spellcheck/notfound.html', locals())
