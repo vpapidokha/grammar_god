@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.myTabButton {
+    margin: 0 0 0 30%;
+}
+
 body{
 
     background-color: #cccccc;
@@ -25,12 +29,20 @@ A:visited {
 }
 
 .queries {
-    margin: 10px 0 0 10px;
+    margin: 0 0 0 10px;
     color: black;
 }
 
 .tagButton {
     margin: 3px 0 0 0px;
+}
+.myHistory {
+    padding: 6px;
+    margin: 0 0 0 44%;
+}
+
+.forgotPassword {
+    margin: 3px 0 0 36%;
 }
 
 .navbar {
@@ -51,8 +63,9 @@ A:visited {
 }*/
 
 .classLogin {
-    padding: 4px ;
+    padding: 6px;
     text-align: center;
+
 }
 
 input[type=email], input[type=text], input[type=password],input[type=password] {
@@ -83,11 +96,11 @@ A:link {
     display: none;
 }
 
-ul {
+/*ul {
     color: red;
     font-size: 25px;
     text-align: center;
-}
+}*/
 
 .blockTabs {
     margin: 0 32%;
@@ -113,7 +126,7 @@ ul {
 }
 
 /* Create an active/current tablink class */
-.tablinks.active {
+.activeTab {
     background-color: #e74c3d;
 }
 
@@ -171,6 +184,8 @@ ul {
 .error-actions .btn {
     margin-right: 10px;
 }
+
+
 
 
 

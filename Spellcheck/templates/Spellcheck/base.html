@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +11,19 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--CSS файл -->
-    {% load static %}
     <link rel="stylesheet" type="text/css" href={% static 'style.css' %}>
+    <!--Java Script файл -->
+    <script src="{% static 'script.js' %}"></script>
 
 </head>
 <header>
-        {% include "Spellcheck/navbar.html" %}
+    {% include "Spellcheck/navbar.html" %}
 </header>
 
 <body>
@@ -24,15 +31,16 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="mainColumn">
-                <form method="post">
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="1" selected>English</option>
-                        <option value="2">Ukrainian</option>
-                    </select>
-                    <textarea class="areaForCheck" name="areaForCheck" placeholder="Please, input text for check" rows="10"
-                              maxlength="500" required autofocus></textarea>
-                    <button class="myButton" type="submit">Check it!</button>
-                </form>
+                <!--<form method="post" name="inputText">-->
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option value="1" selected>English</option>
+                    <option value="2">Ukrainian</option>
+                </select>
+                <textarea class="areaForCheck" name="areaForCheck" placeholder="Please, input text for check" rows="10"
+                          maxlength="500" required autofocus></textarea>
+                <button class="myButton"> Check it!</button>
+                <!--a href=% url 'main' arreaForCheck %}-->
+                <!-- </form>-->
             </div>
         </div>
 
@@ -44,37 +52,13 @@
 
     <div class="row">
         <div class="col-sm-8">
-            <div class="queries">
-                {% for text in texts %}
-                    <button type="button" class="btn btn-success tagButton">{{ text.text|truncatechars:8 }} </button><!--Выводить только 10 символов-->
-                {% endfor %}
-            </div>
+            {% include "Spellcheck/modals.html" %}
         </div>
         <div class="col-sm-4">
 
         </div>
     </div>
 </div>
-
-<!--Скрипт, который показывает содержимое вкладок -->
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-</script>
 
 </body>
 </html>

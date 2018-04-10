@@ -1,0 +1,40 @@
+<div class="myHistory">
+<button type="button" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#collapseQueries" aria-expanded="false"
+        aria-controls="collapseExample">Expand my history</button></div>
+
+<div class="collapse" id="collapseQueries">
+    <div class="card card-body">
+        <div class="queries">
+            {% for text in texts %}
+                <!--<button type="button" class="btn btn-success tagButton" data-toggle="tooltip"
+                        data-placement="bottom" title="</button><!--Выводить только 10 символов-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success tagButton" data-toggle="modal"
+                        data-target="#Modal{{ text.id }}" data-placement="bottom" title="{{ text.text }}">
+                    {{ text.text|truncatechars:8 }} </button><!--Выводить только 8 символов-->
+
+                <!-- Modal -->
+                <div class="modal fade" id="Modal{{ text.id }}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                        <span>
+                            <h4 class="modal-title" id="exampleModalLabel">Language: {{ text.language }}</h4>
+                            <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                            </button>
+                        </span>
+                            </div>
+                            <div class="modal-body">
+                                {{ text.text }}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

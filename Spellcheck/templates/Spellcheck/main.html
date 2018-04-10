@@ -1,35 +1,59 @@
 {% extends 'Spellcheck/base.html' %}
 
 {% block authentication %}
-<div class="classLogin">
-                <div class="blockTabs">
-                    <!--Кнопка вкладки Log In -->
-                    <button class="tablinks" onclick="openTab(event, 'LogIn')" id="defaultOpen">Log in</button>
-                    <!--Кнопка вкладки Sign Up -->
-                    <button class="tablinks" onclick="openTab(event, 'SignUp')">Sign up</button>
-                </div>
+    <div class="classLogin">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active myTabButton"><a href="#LogIn" aria-controls="LogIn" role="tab" data-toggle="tab">Log in</a></li>
+            <li role="presentation"><a href="#SignUp" aria-controls="SignUp" role="tab" data-toggle="tab">Sign up</a></li>
+        </ul>
 
+    </div>
 
-                <!--Вкладка Log In -->
-                <div id="LogIn" class="tabcontent">
-                    <form method="post">
-                        <label for="username">Login</label>
-                        <input type="text" name="username" placeholder="Login" required>
-                        <label for="password">Password</label>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <button class="myButton" type="submit">Log In</button>
-                        <a href="">Forgot Password?</a>
-                    </form>
-                </div>
-                <!--Вкладка Sign Up -->
-                <div id="SignUp" class="tabcontent">
-                    <form action="" method="post">{% csrf_token %}
-                        {{ form.as_p }}
-                        <div>
-                            <button class="myButton" type="submit">Sign Up</button>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="LogIn">
+            <form method="post">
+                <label for="username">Login</label>
+                <input type="text" name="username" placeholder="Login" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password" required>
+                <button class="myButton" type="submit">Log In</button>
+
+            </form>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success forgotPassword" data-toggle="modal" data-target="#forgotPassword">
+                Forgot Password?
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="forgotPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalCenterTitle">Please, input your e-mail:</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    </form>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
                 </div>
-
             </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="SignUp">
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <button class="myButton" type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
 {% endblock %}
