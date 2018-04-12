@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django import forms
 from .models import *
+from django.contrib.auth.models import User
 
 class UsersForm(ModelForm):
     retypePassword = forms.CharField(max_length=50, widget=forms.TextInput(

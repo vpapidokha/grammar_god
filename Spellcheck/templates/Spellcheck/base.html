@@ -32,15 +32,16 @@
         <div class="col-sm-8">
             <div class="mainColumn">
                 <!--<form method="post" name="inputText">-->
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option value="1" selected>English</option>
-                    <option value="2">Ukrainian</option>
-                </select>
-                <textarea class="areaForCheck" name="areaForCheck" placeholder="Please, input text for check" rows="10"
-                          maxlength="500" required autofocus></textarea>
-                <button class="myButton"> Check it!</button>
-                <!--a href=% url 'main' arreaForCheck %}-->
-                <!-- </form>-->
+                <form id="checkText" action="checkInputedText/"> {% csrf_token %}
+                    <select class="form-control" id="FormControlSelect">
+                        <option value="English" selected>English</option>
+                        <option value="Ukrainian">Ukrainian</option>
+                    </select>
+                    <textarea id="areaForInput" placeholder="Please, input text for check" rows="8"
+                              maxlength="400" required autofocus></textarea>
+                    <button class="myButton" id="submit_btn" type="submit"> Check it!</button>
+                    <!--a href=% url 'main' arreaForCheck %}-->
+                </form>
             </div>
         </div>
 
@@ -52,7 +53,10 @@
 
     <div class="row">
         <div class="col-sm-8">
-            {% include "Spellcheck/modals.html" %}
+            {% include "Spellcheck/history.html" %}
+
+            <textarea id="areaForOutput" rows="8"
+                      maxlength="400" required autofocus></textarea>
         </div>
         <div class="col-sm-4">
 
