@@ -4,6 +4,7 @@ from .models import *
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.core.exceptions import ObjectDoesNotExist
 
 def main(request):
     session_key = request.session.session_key
@@ -16,7 +17,18 @@ def main(request):
     form = UsersForm(request.POST or None)
 
     if request.method == "POST" and form.is_valid():
-        new_form=form.save()
+        global user
+        try:
+            user = User.objects.get(username=form.cleaned_data['username'], email=form.cleaned_data['email'])
+        except User.DoesNotExist:
+            user = User.objects.create(username=form.cleaned_data['username'], email=form.cleaned_data['email'])
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+        #user, created = User.objects.get_or_create(username=form.username, email=form.email)
+        #user.set_password(form.password)
+       # user.save()
+        #new_form=form.save()
+
 
     return render(request, 'Spellcheck/main.html', locals())
 
@@ -27,15 +39,33 @@ def checkInputedText(request):
     data = request.POST
 
     inputedText = data.get("inputedText")
-    user = User.objects.filter(username="anonymous")
+    #
+    #print(checkTextExist)
+    global checkTextExist
+    try:
+       checkTextExist = Text.objects.get(textInputed=inputedText)
 
-    print("kdkkdkd")
-    language=data.get("language")
-    for u in user:
-        new_inputedText=Text.objects.create(user_id=2, session_key=session_key, language=language, textInputed=inputedText, textChecked=inputedText, dateTime=datetime.now())
-    checkedText = inputedText
-    return_dict["checkedText"] = checkedText
-    return JsonResponse(return_dict)
+    except Text.DoesNotExist:
+       checkTextExist= None
+    #for t in checkTextExist:
+    if checkTextExist is None:
+        checkTextExist = Text.objects.filter(textInputed=inputedText)
+        user = User.objects.filter(username="anonymous")
+
+        language=data.get("language")
+        #new_inputedText
+        for u in user:
+            new_inputedText=Text.objects.create(user_id=2, session_key=session_key, language=language, textInputed=inputedText, textChecked=inputedText, dateTime=datetime.now())
+            return_dict["userName"] = u.username
+        checkedText = inputedText
+        return_dict["inputedText"]=inputedText
+        return_dict["checkedText"] = checkedText
+        return_dict["language"] = language
+
+        return_dict["textId"]=new_inputedText.id
+        return JsonResponse(return_dict)
+    else:
+        return JsonResponse(return_dict)
 
 def notFound(request):
     return render(request, 'Spellcheck/notfound.html', locals())

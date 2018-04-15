@@ -11,14 +11,19 @@ class UsersForm(ModelForm):
     class Meta:
         model=User
 
+        fields=["username", "email", "password"]
 
-        exclude={""}
-        extra_field = forms.CharField(label='Name of Institution')
+        #extra_field = forms.CharField(label='Name of Institution')
         widgets = {
             'email': forms.TextInput(attrs={'placeholder': 'Input e-mail','required': True,'type': 'email','autofocus':True}),
-            'name': forms.TextInput(attrs={'placeholder': 'Input name', 'required': True}),
+            'username': forms.TextInput(attrs={'placeholder': 'Input login', 'required': True}),
+            #'first_name': forms.TextInput(attrs={'placeholder': 'First name', 'required': True, 'type': 'text'}),
+            #'last_name': forms.TextInput(attrs={'placeholder': 'Last name', 'required': True, 'type': 'text'}),
             'password': forms.TextInput(attrs={'placeholder': 'Input password','required': True, 'type': 'password'}),
-
+           # 'retypePassword': forms.TextInput(attrs={'placeholder': 'Retype password', 'required': True, 'type': 'password'}),
+        }
+        help_texts = {
+            'username' : '',
         }
 
     def clean(self):

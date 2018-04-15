@@ -10,7 +10,7 @@
                     <!--<button type="button" class="btn btn-success tagButton" data-toggle="tooltip"
                             data-placement="bottom" title="</button><!--Выводить только 10 символов-->
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-success tagButton" data-toggle="modal"
+                    <button type="button" id="{{ text.id }}" class="btn btn-success tagButton" data-toggle="modal"
                             data-target="#Modal{{ text.id }}" data-placement="bottom" title="{{ text.textInputed }}">
                         {{ text.textInputed|truncatechars:8 }} </button><!--Выводить только 8 символов-->
 
@@ -39,8 +39,10 @@
                 {% endfor %}
             </div>
         {% else %}
+            <div class="doSwap">
             <div class="empty-history">
                 Your history is empty
+            </div>
             </div>
         {% endif %}
     </div>

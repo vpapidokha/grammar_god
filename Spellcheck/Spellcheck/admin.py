@@ -9,7 +9,7 @@ class TextInline(admin.TabularInline):
 
 
 class TextAdmin (admin.ModelAdmin):
-    list_display=["session_key", "language", "textInputed", "textChecked", "dateTime"]
+    list_display=["id", "session_key", "language", "textInputed", "textChecked", "dateTime"]
     search_fields=["session_key", "language", "textInputed", "textChecked", "dateTime"]
 
     class Meta:

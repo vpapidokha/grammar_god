@@ -17,9 +17,41 @@ $(document).ready(function(){
             cache: true,
             success: function (data) {
                 console.log("OK");
-
+                console.log(data.checkedText);
                 if (data.checkedText){
+                    $(".doSwap").load("main.html .queries");
                     $('#areaForOutput').text(data.checkedText);
+                    console.log(data.textId);
+                    $('.queries').append('<button type="button" id="'+data.textId+'"class="btn btn-success tagButton" data-toggle="modal"' +
+                        'data-target="#Modal'+data.textId+'" data-placement="bottom" title="'+data.checkedText+'">' +
+                        data.checkedText+' </button>'+
+                        '<div class="modal fade" id="Modal'+data.textId+'" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">'+
+                        '<div class="modal-dialog modal-dialog-centered" role="document">'+
+                           ' <div class="modal-content">'+
+                               ' <div class="modal-header">'+
+                       '<span>'+
+                            '<h4 class="modal-title" id="exampleModalLabel">Language: '+data.language+'</h4>'+
+                            '<button type="button" class="close" aria-label="Close" data-dismiss="modal">'+
+                                       '<span aria-hidden="true">&times;</span>'+
+                           '</button>'+
+                        '</span>'+
+                                '</div>'+
+                                '<div class="modal-body">'+
+                                    'User name: '+data.userName+'<p>'+
+                                    'Inputed text: '+data.inputedText+
+                                '</div>'+
+                               '<div class="modal-footer">'+
+                                    '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
+                                '</div>'+
+                           '</div>'+
+                        '</div>'+
+                    '</div>'
+
+
+                    );
+                    console.log("fine");
+                    $('[data-toggle="modal"]').tooltip();
+
                 }
 
             },
@@ -27,6 +59,8 @@ $(document).ready(function(){
                 console.log("error")
             }
         })
+
+
 
     }
 
@@ -38,6 +72,8 @@ $(document).ready(function(){
         checkText(inputedText, language)
 
     });
+
+
 
 
 });
