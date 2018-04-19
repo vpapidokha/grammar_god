@@ -18,13 +18,15 @@ $(document).ready(function(){
             success: function (data) {
                 console.log("OK");
                 console.log(data.checkedText);
-                if (data.checkedText){
+                console.log(typeof data.checkedText);
+                $('#areaForOutput').text(data.checkedText);
+                if (data.added == 'true') {
                     $(".doSwap").load("main.html .queries");
-                    $('#areaForOutput').text(data.checkedText);
+
                     console.log(data.textId);
                     $('.queries').append('<button type="button" id="'+data.textId+'"class="btn btn-success tagButton" data-toggle="modal"' +
                         'data-target="#Modal'+data.textId+'" data-placement="bottom" title="'+data.checkedText+'">' +
-                        data.checkedText+' </button>'+
+                        data.inputedText+' </button>'+
                         '<div class="modal fade" id="Modal'+data.textId+'" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">'+
                         '<div class="modal-dialog modal-dialog-centered" role="document">'+
                            ' <div class="modal-content">'+

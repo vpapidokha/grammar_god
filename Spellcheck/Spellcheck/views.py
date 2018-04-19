@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from django.core.exceptions import ObjectDoesNotExist
 
+import aspell
+
+
 def main(request):
     session_key = request.session.session_key
     if not session_key:
@@ -43,28 +46,41 @@ def checkInputedText(request):
     #print(checkTextExist)
     global checkTextExist
     try:
-       checkTextExist = Text.objects.get(textInputed=inputedText)
+       checkTextExist = Text.objects.get(session_key=session_key, textInputed=inputedText)
+       #checkTextExist = checkTextExist.objects.filter(session_key=session_key)
 
     except Text.DoesNotExist:
        checkTextExist= None
     #for t in checkTextExist:
     if checkTextExist is None:
-        checkTextExist = Text.objects.filter(textInputed=inputedText)
+        #checkTextExist = Text.objects.filter(textInputed=inputedText)
+        #checkTextExist = checkTextExist.objects.filter(session_key=session_key)
         user = User.objects.filter(username="anonymous")
 
         language=data.get("language")
+        if language=="English":
+            s = aspell.Speller('lang', 'en')
+        else:
+            s=aspell.Speller('lang', 'uk')
+        checkedText=s.check(inputedText)
         #new_inputedText
         for u in user:
-            new_inputedText=Text.objects.create(user_id=2, session_key=session_key, language=language, textInputed=inputedText, textChecked=inputedText, dateTime=datetime.now())
+            new_inputedText=Text.objects.create(user_id=2, session_key=session_key, language=language, textInputed=inputedText, textChecked=checkedText, dateTime=datetime.now())
             return_dict["userName"] = u.username
-        checkedText = inputedText
+
+        #checkedText = inputedText
         return_dict["inputedText"]=inputedText
         return_dict["checkedText"] = checkedText
         return_dict["language"] = language
-
+        return_dict["added"] = "true"
         return_dict["textId"]=new_inputedText.id
         return JsonResponse(return_dict)
     else:
+        return_dict["inputedText"]=inputedText
+        return_dict["checkedText"]=checkTextExist.textChecked
+        return_dict["language"]=checkTextExist.language
+        return_dict["added"]="false"
+        #return_dict["userName"]=checkTextExist.user_name
         return JsonResponse(return_dict)
 
 def notFound(request):

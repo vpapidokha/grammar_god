@@ -2,38 +2,76 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="db" uuid="df21bce8-0fa1-4e3f-b7f1-6cfd032195fb">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
       <introspection-schemas>*:</introspection-schemas>
     </data-source>
     <data-source name="db [2]" uuid="3026329e-4179-4284-8852-02eb8f0be0a6">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [3]" uuid="4a69d2c1-5f02-45ea-90e6-80386c3e443e">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [4]" uuid="d3bdc897-b353-4f02-a88c-38a65988f861">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [5]" uuid="abb6c897-310a-4a39-8859-5f38cacda7a8">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [6]" uuid="1486893d-0950-4abc-ba14-70d7160069f9">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [7]" uuid="65116b9e-39af-4a61-a441-9eeaf391f63b">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [8]" uuid="97b249f3-dc58-42f3-89af-27250cdd57c4">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [9]" uuid="a5f97e69-9a26-4a0e-bf5b-2e54ea0dd43f">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [10]" uuid="bae45b44-ee84-49f7-83af-8bf171a9bd02">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [11]" uuid="4f24b257-07ac-48ee-bdd2-c1543715f70f">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
+    </data-source>
+    <data-source name="Django default" uuid="aca24d99-749f-4ede-8479-7ee97321eba8">
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
   </component>
 </project>
