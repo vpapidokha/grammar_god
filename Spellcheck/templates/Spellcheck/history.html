@@ -1,3 +1,4 @@
+{% load static %}
 <div class="myHistory">
     <button type="button" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#collapseQueries" aria-expanded="false"
             aria-controls="collapseExample">Expand my history</button></div>
@@ -19,19 +20,36 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                        <span>
-                            <h4 class="modal-title" id="exampleModalLabel">Language: {{ text.language }}</h4>
-                            <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+
+                            <div class="myModalTitle modal-title" id="exampleModalLabel">Language: {{ text.language }}
+                            {% if text.language == "English" %}
+                                <img class="flag" src="{% static 'Pictures\usa.png' %}" width="35" height="35">
+                            {% else %}
+                                <img class="flag" src="{% static 'Pictures\ukraine.png' %}" width="35" height="35">
+                            {% endif %}
+                            </div>
+                            <button type="button" class="close myClose" aria-label="Close" data-dismiss="modal">
                                         <span aria-hidden="true">&times;</span>
+
                             </button>
-                        </span>
+
                                 </div>
                                 <div class="modal-body">
-                                    {{ text_username }}
-                                    {{ text.textInputed }}
+
+
+                                    {% if text.textChecked == 'True' %}
+                                        <div class="modalCorrectText"> {{ text.textInputed }} </div>
+                                        <div class="checkOutput"><img class="modalpngOutput" src="{% static 'Pictures\happyFace.png' %}" width="100" height="100"></div>
+                                        <div class="modaltextOutput"> Correct!</div>
+                                    {% else %}
+                                        <div class="modalIncorrectText"> {{ text.textInputed }} </div>
+                                        <div class="checkOutput"><img class="modalpngOutput" src="{% static 'Pictures\cryingFace.png' %}" width="100" height="100"></div>
+                                        <div class="modaltextOutput">We detected a typo here!</div>
+                                    {% endif %}
+                                {{ text_nameuser }}
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary myCloseButton" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>

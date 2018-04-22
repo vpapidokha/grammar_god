@@ -46,7 +46,7 @@
         </div>
 
         <div class="col-sm-4">
-            {% block authentication %} <!--main.html-->
+            {% block authentication %} <!--authentication.html-->
             {% endblock %}
         </div>
     </div>
@@ -55,8 +55,12 @@
         <div class="col-sm-8">
             {% include "Spellcheck/history.html" %}
 
-            <textarea id="areaForOutput" rows="8"
-                      maxlength="400" required autofocus></textarea>
+            <!--<textarea id="areaForOutput" rows="8"
+                      maxlength="400" required autofocus></textarea>-->
+            <div class="checkOutput"><img id="pngCorrect" class="pngOutput" src="{% static 'Pictures\happyFace.png' %}" width="130" height="130"></div>
+            <div id="textCorrect" class="textOutput"> Correct!</div>
+             <div class="checkOutput"><img id="pngIncorrect" class="pngOutput" src="{% static 'Pictures\cryingFace.png' %}" width="130" height="130"></div>
+            <div id="textIncorrect" class="textOutput">We detected a typo here!</div>
         </div>
         <div class="col-sm-4">
 
