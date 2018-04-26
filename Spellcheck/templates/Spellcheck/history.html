@@ -21,17 +21,17 @@
                             <div class="modal-content">
                                 <div class="modal-header">
 
-                            <div class="myModalTitle modal-title" id="exampleModalLabel">Language: {{ text.language }}
-                            {% if text.language == "English" %}
-                                <img class="flag" src="{% static 'Pictures\usa.png' %}" width="35" height="35">
-                            {% else %}
-                                <img class="flag" src="{% static 'Pictures\ukraine.png' %}" width="35" height="35">
-                            {% endif %}
-                            </div>
-                            <button type="button" class="close myClose" aria-label="Close" data-dismiss="modal">
+                                    <div class="myModalTitle modal-title" id="exampleModalLabel">Language: {{ text.language }}
+                                        {% if text.language == "English" %}
+                                            <img class="flag" src="{% static 'Pictures\usa.png' %}" width="35" height="35">
+                                        {% else %}
+                                            <img class="flag" src="{% static 'Pictures\ukraine.png' %}" width="35" height="35">
+                                        {% endif %}
+                                    </div>
+                                    <button type="button" class="close myClose" aria-label="Close" data-dismiss="modal">
                                         <span aria-hidden="true">&times;</span>
 
-                            </button>
+                                    </button>
 
                                 </div>
                                 <div class="modal-body">
@@ -45,11 +45,29 @@
                                         <div class="modalIncorrectText"> {{ text.textInputed }} </div>
                                         <div class="checkOutput"><img class="modalpngOutput" src="{% static 'Pictures\cryingFace.png' %}" width="100" height="100"></div>
                                         <div class="modaltextOutput">We detected a typo here!</div>
+
                                     {% endif %}
-                                {{ text_nameuser }}
+
+                                    {{ text_nameuser }}
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary myCloseButton" data-dismiss="modal">Close</button>
+
+                                {% if text.textChecked == 'False' %}
+                                    <div class="suggestInModal">
+                                        <div class="suggestTitleInModal">We assumed that you meant one of this <img class="" src="{% static 'Pictures\thinking.png' %}" width="35" height="35">
+                                        </div><div class="suggestModalList">{{ text.textSuggestion }}</div>
+                                    </div>
+                                {% endif %}
+
+                                <div class="suggestInModal">
+                                <span>
+                                    <div class="userDetail">
+                                        <img class="" src="{% static 'Pictures\user.png' %}" width="28" height="28" data-toggle="icon" title="username"> {{ currentUserNow.username }}
+                                        <p><img class="timeicon" src="{% static 'Pictures\time.png' %}" width="28" height="28" data-toggle="icon" title="Time when was created"> {{ text.dateTimeCreated }}
+                                    </div>
+                                    <div class="wrapButton">
+                                        <button type="button" class="btn btn-primary myCloseButton" data-dismiss="modal">Close</button>
+                                    </div>
+                                </span>
                                 </div>
                             </div>
                         </div>
@@ -58,9 +76,9 @@
             </div>
         {% else %}
             <div class="doSwap">
-            <div class="empty-history">
-                Your history is empty
-            </div>
+                <div class="empty-history">
+                    Your history is empty
+                </div>
             </div>
         {% endif %}
     </div>

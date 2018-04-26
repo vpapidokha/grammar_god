@@ -224,6 +224,8 @@ A:link {
 
 .myCloseButton {
     font-size: 20px;
+    font-size: 20px;
+    margin: -60px 0 0 480px;
 }
 
 .modalTextOutputInputedText {
@@ -242,9 +244,44 @@ A:link {
     font-size: 25px;
 }
 
-.flag {
+.suggestArea {
 
+    text-align: center;
+    font-size: 35px;
 }
+
+.suggestInModal {
+
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+    margin: 15px 0 0 0;
+    padding: 20px 10px 20px 10px;
+}
+
+.suggestTitleInModal {
+    font-size: 25px;
+}
+
+.suggestModalList {
+    font-size: 18px;
+}
+
+.userDetail {
+    text-align: left;
+    margin-bottom: -20px;
+    width:50%;
+    font-size: 15px;
+}
+
+.wrapButton {
+    width:50%;
+    color:dimgrey;
+}
+.timeicon {
+    margin: 5px 0 0 0;
+}
+
+
 
 
 

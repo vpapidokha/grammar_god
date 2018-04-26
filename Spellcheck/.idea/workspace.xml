@@ -33,11 +33,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spellcheck/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="12" column="94" selection-start-line="12" selection-start-column="94" selection-end-line="12" selection-end-column="94" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="224" column="14" selection-start-line="224" selection-start-column="1" selection-end-line="224" selection-end-column="14" />
+            <state relative-caret-position="73">
+              <caret line="277" column="18" selection-start-line="277" selection-start-column="18" selection-end-line="277" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -45,20 +57,21 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="46" column="104" selection-start-line="46" selection-start-column="104" selection-end-line="46" selection-end-column="104" />
+            <state relative-caret-position="2176">
+              <caret line="128" column="56" selection-start-line="128" selection-start-column="56" selection-end-line="128" selection-end-column="56" />
               <folding>
+                <element signature="e#747#754#1" expanded="true" />
                 <element signature="e#613#620#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Spellcheck/main.html">
+      <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Spellcheck/history.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="38" column="81" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="81" />
+            <state relative-caret-position="17">
+              <caret line="62" column="58" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -66,8 +79,17 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Spellcheck/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+            <state relative-caret-position="297">
+              <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Spellcheck/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -75,8 +97,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Spellcheck/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="71" column="32" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="32" />
+            <state relative-caret-position="158">
+              <caret line="82" column="182" selection-start-line="82" selection-start-column="182" selection-end-line="82" selection-end-column="182" />
             </state>
           </provider>
         </entry>
@@ -84,7 +106,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spellcheck/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="277">
               <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
             </state>
           </provider>
@@ -93,26 +115,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spellcheck/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="17" column="15" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Spellcheck/navbar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="72" lean-forward="true" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Spellcheck/history.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="45" column="169" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="169" />
+            <state relative-caret-position="226">
+              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -131,23 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lig</find>
-      <find>area</find>
-      <find>areaForCheck</find>
-      <find>myH</find>
-      <find>tagButton</find>
-      <find>#d</find>
-      <find>quer</find>
-      <find>tag</find>
-      <find>labek</find>
-      <find>que</find>
-      <find>error-template</find>
-      <find>pa</find>
-      <find>pass</find>
-      <find>tab</find>
-      <find>tab-content</find>
-      <find>s</find>
-      <find>form-control</find>
       <find>myHistory</find>
       <find>modaltextOutput</find>
       <find>checkOutput</find>
@@ -157,10 +144,27 @@
       <find>forgotPassword</find>
       <find>button</find>
       <find>forgo</find>
-      <find>history</find>
       <find>text</find>
-      <find>textInputed</find>
       <find>myclo</find>
+      <find>tagButton</find>
+      <find>sugg</find>
+      <find>flag</find>
+      <find>we</find>
+      <find>thinki</find>
+      <find>modal</find>
+      <find>history</find>
+      <find>myMo</find>
+      <find>thin</find>
+      <find>suggestTitleInModal</find>
+      <find>suggestModalList</find>
+      <find>suggestTitleInModalmyModalTitleSuppose</find>
+      <find>myModalTitle</find>
+      <find>myCloseButton</find>
+      <find>myModalTitleSuppose</find>
+      <find>sorry</find>
+      <find>textInputed</find>
+      <find>suggestInModal</find>
+      <find>myC</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -170,18 +174,18 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3026329e-4179-4284-8852-02eb8f0be0a6/console.sql" />
         <option value="$PROJECT_DIR$/templates/Spellcheck/notfound.html" />
         <option value="$PROJECT_DIR$/templates/Spellcheck/modals.html" />
-        <option value="$PROJECT_DIR$/Spellcheck/models.py" />
         <option value="$PROJECT_DIR$/Spellcheck/forms.py" />
-        <option value="$PROJECT_DIR$/Spellcheck/admin.py" />
         <option value="$PROJECT_DIR$/Spellcheck/settings.py" />
         <option value="$PROJECT_DIR$/templates/Spellcheck/navbar.html" />
         <option value="$PROJECT_DIR$/Spellcheck/urls.py" />
-        <option value="$PROJECT_DIR$/templates/Spellcheck/base.html" />
-        <option value="$PROJECT_DIR$/Spellcheck/views.py" />
-        <option value="$PROJECT_DIR$/style/style.css" />
         <option value="$PROJECT_DIR$/templates/Spellcheck/main.html" />
+        <option value="$PROJECT_DIR$/Spellcheck/admin.py" />
         <option value="$PROJECT_DIR$/templates/Spellcheck/history.html" />
+        <option value="$PROJECT_DIR$/style/style.css" />
         <option value="$PROJECT_DIR$/style/script.js" />
+        <option value="$PROJECT_DIR$/templates/Spellcheck/base.html" />
+        <option value="$PROJECT_DIR$/Spellcheck/models.py" />
+        <option value="$PROJECT_DIR$/Spellcheck/views.py" />
       </list>
     </option>
   </component>
@@ -205,6 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,7 +248,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Course" />
     </panes>
   </component>
@@ -255,7 +259,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -340,13 +344,13 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.39238653" side_tool="true" visible="true" weight="0.25426358" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.39238653" side_tool="true" weight="0.25426358" />
       <window_info anchor="bottom" id="Database Changes" order="7" weight="0.32868218" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3283582" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.32868218" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.60761344" visible="true" weight="0.25426358" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15446559" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.60761344" visible="true" weight="0.25426358" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15373352" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="7.320644E-4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -378,20 +382,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Spellcheck/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="123" selection-start-line="16" selection-start-column="123" selection-end-line="16" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Spellcheck/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spellcheck/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -572,16 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spellcheck/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spellcheck/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -596,13 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spellcheck/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Spellcheck/notfound.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -610,58 +583,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Spellcheck/authentication.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spellcheck/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/Spellcheck/authentication.html" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/db/backends/sqlite3/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state relative-caret-position="151">
+          <caret line="302" selection-start-line="302" selection-end-line="302" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Spellcheck/base.html">
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        <state relative-caret-position="151">
+          <caret line="406" selection-start-line="406" selection-end-line="406" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spellcheck/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="94" selection-start-line="12" selection-start-column="94" selection-end-line="12" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="224" column="14" selection-start-line="224" selection-start-column="1" selection-end-line="224" selection-end-column="14" />
+        <state relative-caret-position="73">
+          <caret line="277" column="18" selection-start-line="277" selection-start-column="18" selection-end-line="277" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Spellcheck/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="38" column="81" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Spellcheck/history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="45" column="169" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="169" />
+        <state relative-caret-position="396">
+          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="46" column="104" selection-start-line="46" selection-start-column="104" selection-end-line="46" selection-end-column="104" />
+        <state relative-caret-position="2176">
+          <caret line="128" column="56" selection-start-line="128" selection-start-column="56" selection-end-line="128" selection-end-column="56" />
           <folding>
+            <element signature="e#747#754#1" expanded="true" />
             <element signature="e#613#620#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Spellcheck/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Spellcheck/history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="62" column="58" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Spellcheck/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spellcheck/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Spellcheck/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="32" />
+        <state relative-caret-position="158">
+          <caret line="82" column="182" selection-start-line="82" selection-start-column="182" selection-end-line="82" selection-end-column="182" />
         </state>
       </provider>
     </entry>

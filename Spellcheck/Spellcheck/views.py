@@ -15,6 +15,10 @@ def main(request):
         request.session.cycle_key()
 
     texts=Text.objects.filter(session_key=session_key)
+    allUser=User.objects.filter(id=2)
+    currentUserNow=None
+    for a in allUser:
+        currentUserNow=a
     count=texts.count()
     #UsersForm.fields['email'].widget.attrs['placeholder'] = 'name'
     form = UsersForm(request.POST or None)
@@ -29,8 +33,8 @@ def main(request):
             user.save()
         #user, created = User.objects.get_or_create(username=form.username, email=form.email)
         #user.set_password(form.password)
-       # user.save()
-        #new_form=form.save()
+    # user.save()
+    #new_form=form.save()
 
 
     return render(request, 'Spellcheck/main.html', locals())
@@ -42,15 +46,17 @@ def checkInputedText(request):
     data = request.POST
 
     inputedText = data.get("inputedText")
+    current_user = User.objects.filter(id=2)
     #
     #print(checkTextExist)
     global checkTextExist
     try:
-       checkTextExist = Text.objects.get(session_key=session_key, textInputed=inputedText)
-       #checkTextExist = checkTextExist.objects.filter(session_key=session_key)
+        checkTextExist = Text.objects.get(session_key=session_key, textInputed=inputedText)
+
+        #checkTextExist = checkTextExist.objects.filter(session_key=session_key)
 
     except Text.DoesNotExist:
-       checkTextExist= None
+        checkTextExist= None
     #for t in checkTextExist:
     if checkTextExist is None:
         #checkTextExist = Text.objects.filter(textInputed=inputedText)
@@ -63,23 +69,41 @@ def checkInputedText(request):
         else:
             s=aspell.Speller('lang', 'uk')
         checkedText=s.check(inputedText)
-        #new_inputedText
+        textSuggestion="| "
+        if checkedText==False:
+            for oneSuggest in s.suggest(inputedText):
+                textSuggestion += oneSuggest + " | "
+            if textSuggestion == "| ":
+                textSuggestion = "Sorry, but we haven't found any similar words in our dictionary."
+        # textSuggestionTwo=s.suggest(inputedText)
+        else:
+            textSuggestion=""
+        new_inputedText=None
         for u in user:
-            new_inputedText=Text.objects.create(user_id=2, session_key=session_key, language=language, textInputed=inputedText, textChecked=checkedText, dateTime=datetime.now())
+            new_inputedText=Text.objects.create(user_id=2, session_key=session_key, language=language, textInputed=inputedText, textChecked=checkedText, textSuggestion=textSuggestion)
             return_dict["userName"] = u.username
 
         #checkedText = inputedText
         return_dict["inputedText"]=inputedText
         return_dict["checkedText"] = checkedText
         return_dict["language"] = language
+        return_dict["suggest"] = textSuggestion
+        #return_dict["suggestTwo"] = textSuggestionTwo
         return_dict["added"] = "true"
         return_dict["textId"]=new_inputedText.id
+        for a in current_user:
+            return_dict["mycurrentUser"]=a.username
+        return_dict["dateCreated"] = new_inputedText.dateTimeCreated
         return JsonResponse(return_dict)
     else:
         return_dict["inputedText"]=inputedText
         return_dict["checkedText"]=checkTextExist.textChecked
         return_dict["language"]=checkTextExist.language
+        return_dict["suggest"] = checkTextExist.textSuggestion
         return_dict["added"]="false"
+        for a in current_user:
+            return_dict["mycurrentUser"]=a.username
+        return_dict["dateCreated"]=checkTextExist.dateTimeCreated
         #return_dict["userName"]=checkTextExist.user_name
         return JsonResponse(return_dict)
 
@@ -88,12 +112,12 @@ def notFound(request):
 
 
 #def main(request, inputedText):
-   # name = 'Kavinnnn'
-    #texts=Text.objects.filter()
-    #UsersForm.fields['email'].widget.attrs['placeholder'] = 'name'
-    #form = InputText(request.POST or None)
+# name = 'Kavinnnn'
+#texts=Text.objects.filter()
+#UsersForm.fields['email'].widget.attrs['placeholder'] = 'name'
+#form = InputText(request.POST or None)
 
-    #if request.method=="POST" and form.is_valid():
-       # new_form=form.save()
+#if request.method=="POST" and form.is_valid():
+# new_form=form.save()
 
-   # return render(request, 'Spellcheck/main.html', locals())
+# return render(request, 'Spellcheck/main.html', locals())
