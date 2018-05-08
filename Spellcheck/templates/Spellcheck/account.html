@@ -1,0 +1,119 @@
+{% extends 'Spellcheck/base.html' %}
+{% load static %}
+{% block authentication %}
+    <div class="container">
+        <div class="myCalendar">
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block buttonHistory %}
+
+    <div class="allHistory">
+        <button type="button" class="btn btn-success btn-sm myBtnAllHistory" data-toggle="collapse" data-target="#collapseQueries2" aria-expanded="false"
+                aria-controls="collapseExample">Expand history of other users</button></div>
+
+    <div class="collapse" id="collapseQueries2">
+        <div class="card card-body">
+            {% if countUsersText %}
+                <div class="queries">
+                    {% for textUsers in historyOfOthers %}
+                        <!--<button type="button" class="btn btn-success tagButton" data-toggle="tooltip"
+                                data-placement="bottom" title="</button><!--Выводить только 10 символов-->
+                        <!-- Button trigger modal -->
+                        <button type="button" id="{{ textUsers.id }}" class="btn btn-success tagButton" data-toggle="modal"
+                                data-target="#Modal{{ textUsers.id }}" data-placement="bottom" title="{{ textUsers.textInputed }}">
+                            {{ textUsers.textInputed|truncatechars:8 }} </button><!--Выводить только 8 символов-->
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal{{ textUsers.id }}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+
+                                        <div class="myModalTitle modal-title" id="exampleModalLabel">Language: {{ textUsers.language }}
+                                            {% if textUsers.language == "English" %}
+                                                <img class="flag" src="{% static 'Pictures\usa.png' %}" width="35" height="35">
+                                            {% else %}
+                                                <img class="flag" src="{% static 'Pictures\ukraine.png' %}" width="35" height="35">
+                                            {% endif %}
+                                        </div>
+                                        <button type="button" class="close myClose" aria-label="Close" data-dismiss="modal">
+                                            <span aria-hidden="true">&times;</span>
+
+                                        </button>
+
+                                    </div>
+                                    <div class="modal-body">
+
+
+                                        {% if textUsers.textChecked == 'True' %}
+                                            <div class="modalCorrectText"> {{ textUsers.textInputed }} </div>
+                                            <div class="checkOutput"><img class="modalpngOutput" src="{% static 'Pictures\happyFace.png' %}" width="100" height="100"></div>
+                                            <div class="modaltextOutput"> Correct!</div>
+                                        {% else %}
+                                            <div class="modalIncorrectText"> {{ textUsers.textInputed }} </div>
+                                            <div class="checkOutput"><img class="modalpngOutput" src="{% static 'Pictures\cryingFace.png' %}" width="100" height="100"></div>
+                                            <div class="modaltextOutput">We detected a typo here!</div>
+
+                                        {% endif %}
+
+
+                                    </div>
+
+                                    {% if textUsers.textChecked == 'False' %}
+                                        <div class="suggestInModal">
+                                            <div class="suggestTitleInModal">We assumed that you meant one of this <img class="" src="{% static 'Pictures\thinking.png' %}" width="35" height="35">
+                                            </div><div class="suggestModalList">{{ textUsers.textSuggestion }}</div>
+                                        </div>
+                                    {% endif %}
+
+                                    <div class="suggestInModal">
+                                <span>
+                                    <div class="userDetail">
+                                        <img class="" src="{% static 'Pictures\user.png' %}" width="28" height="28" data-toggle="icon" title="username">
+                                        {% for a in allUsers %}
+                                            {% if a.id == textUsers.user_id %}
+                                                {{ a.username }}
+                                            {% endif %}
+                                        {% endfor %}
+
+                                        <p><img class="timeicon" src="{% static 'Pictures\time.png' %}" width="28" height="28" data-toggle="icon" title="Time when was created"> {{ textUsers.dateTimeCreated }}
+                                    </div>
+                                    <div class="wrapButton">
+
+                                        <button type="button" class="btn btn-primary myCloseButton" data-dismiss="modal">Close</button>
+                                    </div>
+                                </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="doSwap">
+                    <div class="empty-history">
+                        Your history is empty
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock %}

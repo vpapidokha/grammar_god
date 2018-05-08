@@ -22,11 +22,16 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('^admin$', admin.site.urls),
     url(r'^$', views.main, name='Main page'),
     url(r'^main[/]{0,1}$', views.main, name='Main page'),
     url(r'^main.html[/]{0,1}$', views.main, name='Main page'),
     url(r'^index[/]{0,1}$', views.main, name='Main page'),
     url(r'^index.html[/]{0,1}$', views.main, name='Main page'),
+    url(r'^login/$', views.loginInAccount, name='Log in'),
+    url(r'^account/$', views.account, name='Log in'),
+    url(r'^accounts/login/', include('django.contrib.auth.urls')),
+    url(r'^deleteQuery/$', views.deleteQuery, name='Main page'),
     url(r'^checkInputedText/$', views.checkInputedText, name='Check text'),
     url(r'^', views.notFound, name='Page not found'),
 

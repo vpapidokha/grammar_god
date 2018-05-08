@@ -48,7 +48,7 @@
 
                                     {% endif %}
 
-                                    {{ text_nameuser }}
+
                                 </div>
 
                                 {% if text.textChecked == 'False' %}
@@ -65,7 +65,17 @@
                                         <p><img class="timeicon" src="{% static 'Pictures\time.png' %}" width="28" height="28" data-toggle="icon" title="Time when was created"> {{ text.dateTimeCreated }}
                                     </div>
                                     <div class="wrapButton">
-                                        <button type="button" class="btn btn-primary myCloseButton" data-dismiss="modal">Close</button>
+
+                                        {% if ifThereUserAuthenticated %}
+                                            <form id="deleteForm" action="">{% csrf_token %}
+                                                <input id="deleteId" class="boxWithValue" value="{{ text.id }}">
+                                        <button id="deleteButton" class="btn btn-danger myDeleteButton" type="submit" value="delete">Delete</button>
+                                            </form>
+                                            <button type="button" class="btn btn-primary myCloseButtonAndDelete" data-dismiss="modal">Close</button>
+                                        {% else %}
+
+                                            <button type="button" class="btn btn-primary myCloseButton" data-dismiss="modal">Close</button>
+                                        {% endif %}
                                     </div>
                                 </span>
                                 </div>

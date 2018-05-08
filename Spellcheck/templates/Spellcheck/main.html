@@ -12,12 +12,15 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="LogIn">
-            <form method="post">
+            <form  method="post" action=""> {%  csrf_token %}
                 <label for="username">Login</label>
                 <input type="text" name="username" placeholder="Login" required>
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Password" required>
-                <button class="myButton" type="submit">Log In</button>
+                <button class="myButton" name="login" type="submit" value="login">Log In</button>
+                {% if login_error %}
+                    <label class="error">{{ login_error }}</label>
+                {% endif %}
 
             </form>
             <!-- Button trigger modal -->
@@ -50,7 +53,7 @@
             <form action="" method="post">{% csrf_token %}
                 {{ form.as_p }}
                 <div>
-                    <button class="myButton" type="submit">Sign Up</button>
+                    <button class="myButton" name="signup" type="submit" value="signup">Sign Up</button>
                 </div>
             </form>
         </div>

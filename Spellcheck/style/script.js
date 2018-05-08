@@ -1,7 +1,12 @@
 $(document).ready(function(){
     $('[data-toggle="modal"]').tooltip();
     $('[data-toggle="icon"]').tooltip();
+    $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+
     var form = $('#checkText');
+    var formDelete=$('#deleteForm');
 
     function checkText(inputedText, language){
         var data = {};
@@ -21,11 +26,14 @@ $(document).ready(function(){
                 console.log(data.checkedText);
                 console.log(typeof data.checkedText);
                 console.log(data.mycurrentUser);
+                var date = new Date(data.dateTimeCreated)
+
                 if(data.checkedText=='True') {
                     $('#pngIncorrect').hide();
                     $('#textIncorrect').hide();
                     $('#ourSuggest').hide();
                     $('#pngCorrect').show('slow');
+
                     $('#textCorrect').show('slow');
                     console.log('Show image that correct');
                 } else {
@@ -86,6 +94,7 @@ $(document).ready(function(){
                         url = "style\\Pictures\\usa.png";
                     }
                     console.log(myCase);
+
                     $('.queries').append('<button type="button" id="'+data.textId+'"class="btn btn-success tagButton" data-toggle="modal"' +
                         'data-target="#Modal'+data.textId+'" data-placement="bottom" title="'+data.inputedText+'">' +
                         data.inputedText+' </button>'+
@@ -127,7 +136,18 @@ $(document).ready(function(){
                     console.log("fine");
                     $('[data-toggle="modal"]').tooltip();
                     $('[data-toggle="icon"]').tooltip();
+                    /*
+                    setTimeout(function() {  $('#loadProcces').hide(); }, 100000);
+                    $('#loadProcces').hide();
+                    $('#submit_btn').show();
+                    $('#areaForInput').show();*/
 
+                }
+                else {/*
+                    setTimeout(function() {  $('#loadProcces').hide(); }, 5000);
+                    $('#loadProcces').hide();
+                    $('#submit_btn').show();
+                    $('#areaForInput').show();*/
                 }
 
             },
@@ -140,13 +160,71 @@ $(document).ready(function(){
 
     }
 
+    formDelete.on('submit', function(e){
+        e.preventDefault();
+        var idOfText =$("deleteId").val();
+        console.log(idOfText);
+        delQuery(idOfText);
+    });
+
+    function delQuery(idOfText){
+        var data = {};
+        data.idText = idOfText;
+        console.log(data.idText);
+        var csrf_token = $('#checkText [name="csrfmiddlewaretoken"]').val();
+        data["csrfmiddlewaretoken"] = csrf_token;
+
+        var url = form.attr("action");
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            cache: true,
+            success: function (data) {
+                console.log("OK");
+    },
+            error: function(){
+                console.log("error")
+            }
+        })
+
+
+
+    }
+
+
+
     form.on('submit', function(e){
         e.preventDefault();
+
         var inputedText = $("#areaForInput").val();
         var language=$("#FormControlSelect").val();
+        /*
+        $('#areaForInput').hide();
+        $('#submit_btn').hide();
+        $('#loadProcces').show();
+        */
 
         checkText(inputedText, language)
 
+    });
+
+    $("#pngCorrect").mouseover(function(){
+        console.log('Enter');
+        var audio = $("#sound-correct")[0];
+        audio.play();
+    });
+
+    $("#pngIncorrect").mouseover(function(){
+        console.log('Enter');
+        var audio = $("#sound-incorrect")[0];
+        audio.play();
+    });
+
+    $("#helloPng").mouseover(function(){
+        console.log('Enter');
+        var audio = $("#sound-hello")[0];
+        audio.play();
     });
 
 

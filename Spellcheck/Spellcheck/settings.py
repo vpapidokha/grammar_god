@@ -126,3 +126,6 @@ STATIC_URL = '/style/'
 
 STATICFILES_DIRS=(os.path.join(BASE_DIR, "style"),"~/style/",)
 #MEDIA_URL = '/style/'
+
+LOGIN_REDIRECT_URL = 'account/'
+LOGOUT_REDIRECT_URL = '/'

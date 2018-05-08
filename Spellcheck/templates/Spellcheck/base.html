@@ -16,6 +16,13 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/en-au.js"></script>
+     <script data-require="MomentJS@2.10.0" data-semver="2.10.0" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
     <!--CSS файл -->
     <link rel="stylesheet" type="text/css" href={% static 'style.css' %}>
     <!--Java Script файл -->
@@ -40,6 +47,8 @@
                     <textarea id="areaForInput" placeholder="Please, input text for check" rows="8"
                               maxlength="400" required autofocus></textarea>
                     <button class="myButton" id="submit_btn" type="submit"> Check it!</button>
+                    <div class="loading"><img id="loadProcces" class="loadProccess" src="{% static 'Pictures\load.gif' %}" width="300" height="300"></div>
+
                     <!--a href=% url 'main' arreaForCheck %}-->
                 </form>
             </div>
@@ -55,6 +64,7 @@
         <div class="col-sm-8">
             {% include "Spellcheck/history.html" %}
 
+
             <!--<textarea id="areaForOutput" rows="8"
                       maxlength="400" required autofocus></textarea>-->
             <div class="checkOutput"><img id="pngCorrect" class="pngOutput" src="{% static 'Pictures\happyFace.png' %}" width="130" height="130"></div>
@@ -62,11 +72,29 @@
              <div class="checkOutput"><img id="pngIncorrect" class="pngOutput" src="{% static 'Pictures\cryingFace.png' %}" width="130" height="130"></div>
             <div id="textIncorrect" class="textOutput">We detected a typo here!</div>
             <div id="ourSuggest" class="suggestArea"></div>
-
+            <audio id="sound-correct" preload="auto">
+            <source src={% static "Music/correct.mp3" %} type="audio/mpeg">
+            </audio>
+             <audio id="sound-incorrect" preload="auto">
+            <source src={% static "Music/incorrect.mp3" %} type="audio/mpeg">
+            </audio>
 
         </div>
         <div class="col-sm-4">
+        {% block buttonHistory %}
 
+            {% endblock %}
+        <div>
+        <div style="overflow:hidden;">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div id="datetimepicker12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         </div>
     </div>
 </div>
