@@ -27,7 +27,7 @@ SECRET_KEY = '@=x-nl!k71@plgg#z_!-3tp5yp3#whh^0ag&9kmjx7p9(-j*vb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['GrammarGod.sgfsgynp3y.us-west-2.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = ['ec2-34-218-228-217.us-west-2.compute.amazonaws.com','GrammarGod.sgfsgynp3y.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
